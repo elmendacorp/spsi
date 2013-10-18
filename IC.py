@@ -29,6 +29,11 @@ def cleanText(text):
     text = text.replace("¡", " ")
     text = text.replace("?", " ")
     text = text.replace("¿", " ")
+    text = text.replace("(", " ")
+    text = text.replace(")", " ")
+    text = text.replace("/", " ")
+    text = text.replace("'", " ")
+    text = text.replace("-", " ")
     # Todo el texto a minuscula
     text = text.lower()
     return text
