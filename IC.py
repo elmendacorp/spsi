@@ -48,14 +48,16 @@ def eraseWhiteSpace(text):
     return text
 
 
-def countLetterFrecuency(text):
+def countLetterFrecuency(text, textout):
     # Para contar la frecuencia de las letras usamos lo siguiente
     for i in ALPHABET_LOWERCASE:
-        print("Frecuencia de las letras")
-        print(i + ": " + str(textStr.count(i)))
+        a= i + ": " + str(textStr.count(i))
+        textout.write(a)
 
 if __name__ == '__main__':
     fichero = open("test.txt")
+    fichero2 = open("process.txt","w")
+    fichero3 = open ("count.txt", "w")
     textStr = fichero.read()
 
     # Primero limpiamos el texto de los caracteres peculiares
@@ -64,6 +66,8 @@ if __name__ == '__main__':
 
     # Segundo quitamos los espacios
     textStr = eraseWhiteSpace(textStr)
+    fichero2.write(textStr)
     print(textStr)
 
-    countLetterFrecuency(textStr)
+    countLetterFrecuency(textStr,fichero3)
+    
