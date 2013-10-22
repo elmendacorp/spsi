@@ -4,6 +4,7 @@
 
 
 import string
+import random
 
 # Constante que contiene las minusculas
 # Hay 27 caracteres en el alfabeto
@@ -55,11 +56,20 @@ def countLetterFrecuency(text, textout):
         textout.write(a)
         textout.write("\n")
 
+def permutacion(text):
+    #aplica la permutacion a un texto y crea uno nuevo
+    #la permutacion es una aleatoria entre los caracteres de ascii en minuscula
+    i = random.randint(0, 27)
+    for j in range(27): 
+        text.replace(lista_letras[j],lista_letras[i])
+        i = i + 1
+        i = i % 27
 
 if __name__ == '__main__':
     fichero = open("test.txt")
     fichero2 = open("process.txt", "w")
     fichero3 = open("count.txt", "w")
+    fichero4 = open("permutacion.txt", "w")
     textStr = fichero.read()
 
     # Primero limpiamos el texto de los caracteres peculiares
@@ -68,6 +78,6 @@ if __name__ == '__main__':
     #NO CAMBIES MAS ESTO
     # Segundo quitamos los espacios
 
-    fichero2.write(textStr)
-
     countLetterFrecuency(textStr, fichero3)
+    permutacion(textStr)
+    fichero4.write(textStr)
