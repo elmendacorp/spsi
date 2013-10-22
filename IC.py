@@ -7,9 +7,8 @@ import string
 
 # Constante que contiene las minusculas
 # Hay 27 caracteres en el alfabeto
-ALPHABET_LOWERCASE = string.ascii_lowercase + "ñ"
-
-
+#ALPHABET_LOWERCASE = string.ascii_lowercase + "ñ"
+lista_letras = ["a","b","c","d","e","f","g","h","i","j","k","l","m","ñ","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 def cleanText(text):
     """
     Función creada para reemplazar los caracteres peculiares
@@ -51,7 +50,7 @@ def eraseWhiteSpace(text):
 
 def countLetterFrecuency(text, textout):
     # Para contar la frecuencia de las letras usamos lo siguiente
-    for i in ALPHABET_LOWERCASE:
+    for i in lista_letras:
         a = i + ": " + str(text.count(i))
         textout.write(a)
         textout.write("\n")
@@ -64,9 +63,9 @@ if __name__ == '__main__':
     textStr = fichero.read()
 
     # Primero limpiamos el texto de los caracteres peculiares
-    textStr = cleanText(textStr)
     textStr = eraseWhiteSpace(textStr)
-
+    textStr = cleanText(textStr)
+    #NO CAMBIES MAS ESTO
     # Segundo quitamos los espacios
 
     fichero2.write(textStr)
