@@ -60,9 +60,9 @@ def countLetterFrecuency(text, textout):
     # Al final devuelve el diccionario de frecuencia ordenado
     freqDict = {
         "a": 0, "b": 0, "c": 0, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0,
-        "i": 0, "j": 0, "k": 0, "l": 0, "m": 0, "ñ": 0, "n": 0, "o": 0,
+        "i": 0, "j": 0, "k": 0, "l": 0, "m": 0, "n": 0, "o": 0,
         "p": 0, "q": 0, "r": 0, "s": 0, "t": 0, "u": 0, "v": 0, "w": 0,
-        "x": 0, "y": 0, "z": 0}
+        "x": 0, "y": 0, "z": 0, "ñ": 0}
     # Para contar la frecuencia de las letras usamos lo siguiente
     for i in lista_letras:
         a = i + ": " + str(text.count(i))
@@ -80,6 +80,7 @@ def indiceCoincidena(text, dictFreq):
     en la cual en cada una se multiplica por la frecuencia menos
     1 dividido por n que es la longitud del texto por el numero
     menos 1
+    El indice de coincidencia esta cerca de lo normal
     """
     # Primero calculamos el numero de caracteres
     numTotalesChar = len(text)
@@ -104,20 +105,23 @@ def permutacion(text):
 
 
 if __name__ == '__main__':
-    fichero = open("kipling1.txt")
+    fichero = open("test.txt")
     fichero2 = open("process.txt", "w")
     fichero3 = open("count.txt", "w")
     fichero4 = open("permutacion.txt", "w")
-    fichero = fichero.decode('latin-1').encode("utf-8")
+
+    #Leemos del Fichero
     textStr = fichero.read()
 
     # Primero limpiamos el texto de los caracteres peculiares
     textStr = eraseWhiteSpace(textStr)
-    textStr = cleanText(textStr)
-    # NO CAMBIES MAS ESTO
     # Segundo quitamos los espacios
+    textStr = cleanText(textStr)
 
+    #Tercera contamos la frecuencia de las letras y hacemos sort sobre ellas
     a = countLetterFrecuency(textStr, fichero3)
+
+    #Imprimimos el indice de coincidencia
     print(indiceCoincidena(textStr, a))
-    # permutacion(textStr)
-    # fichero4.write(textStr)
+
+    #TODAVIA QUEDA DEFINIR LAS PERMUTACIONES Y CALCULAR EL IC DE ELLAS
