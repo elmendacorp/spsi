@@ -95,16 +95,22 @@ def indiceCoincidena(text, dictFreq):
 #simple script que cifra/descifra un texto con un cifrado vernam, con la aplicacion xor.
 #se le puede pasar la clave que se crea oportuna
 def crypt(text, key):
-    ''' cifra/descifra un texto utilizando operacion XOR'''
     new_text = ""
- 
     for i, c in enumerate(text):
         code = ord(c)
         xor = code ^ ord(key[i])
         new_text += chr(xor)
- 
     return new_text
 
+#genera una clave aleatoria en base al tamaño del texto
+def get_randomkey(text):
+    start = '1'
+    end = '9'
+    for i in range(0, len(text) - 1):
+        start += '0'
+        end += '9'
+    key = random.randint(int(start), int(end))
+    return str(key)
 
 if __name__ == '__main__':
     fichero = open("calderon1.txt")
@@ -117,6 +123,7 @@ if __name__ == '__main__':
     fichero8 = open("lazarillo.txt")
     fichero9 = open("2donq10.txt")
     fichero10 = open("count.txt","w")
+    fichero11 = open("count2.txt","w")
 
     #Leemos del Fichero
     textStr = fichero.read() + fichero2.read() + fichero3.read() + fichero4.read() + fichero5.read() + fichero6.read() + fichero7.read() + fichero8.read() + fichero9.read() 
@@ -131,5 +138,14 @@ if __name__ == '__main__':
     #Imprimimos el indice de coincidencia
     print(a)    
     print(indiceCoincidena(textStr, a))
+    
+    keygen = get_randomkey(textStr)
+    print("la clave es:",keygen)
+    
+    textStr = crypt(textStr, keygen)
+    print("Texto cifrado", textStr)
+    
+    a = countLetterFrecuency(textStr, fichero11)
+    print(a)
+    print(indiceCoincidena(textStr, a))
 
-    #TODAVIA QUEDA DEFINIR LAS PERMUTACIONES Y CALCULAR EL IC DE ELLAS
