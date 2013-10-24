@@ -101,41 +101,31 @@ def init(b):
     "k": b[30:33], "l": b[33:36], "m": b[36:39], "n": b[39:42], "o": b[42:45],
     "p": b[45:48], "q": b[48:51], "r": b[51:54], "s": b[54:57], "t": b[57:60],
     "u": b[60:63], "v": b[63:66], "w": b[66:69], "x": b[69:72], "y": b[72:75],
-    "z": b[75:78], " ": b[78:81]}
+    "z": b[75:78]}
 
     dic2 = {b[0:3]: "a", b[3:6]: "b", b[6:9]: "c", b[9:12]: "d", b[12:15]: "e", 
     b[15:18]: "f", b[18:21]: "g", b[21:24]: "h", b[24:27]: "i", b[27:30]: "j", 
     b[30:33]: "k", b[33:36]: "l", b[36:39]: "m", b[39:42]: "n", b[42:45]: "o", 
     b[45:48]: "p", b[48:51]: "q", b[51:54]: "r", b[54:57]: "s", b[57:60]: "t", 
     b[60:63]: "u", b[63:66]: "v", b[66:69]: "w", b[69:72]: "x", b[72:75]: "y", 
-    b[75:78]: "z", b[78:81]: " "}
+    b[75:78]: "z"}
     
     cad=b
     
 def codificar(cadena):
     res=""
-    for x in cadena:
-        x = chr(x)
-        res+=dic[x]
-        res+=("*")
+    for x in range(0,len(cadena)):
+        res+=dic[cadena[x]]
     print "cadena de codificacion:", cad
     return res
     
 def descodificar(code):
     res="" 
-    for x in code.split("*"):
+    for x in code:
         if x!="":
-            x = chr(x)
             res+=dic2[x]
     print "cadena de codificacion:", cad
     return res 
-
-def cambiar():
-    res=""
-    for x in cad:
-        res+=char[x]
-    print "cadena de codificacion cambiada a:", res
-    init(res)
 
 if __name__ == '__main__':
     fichero = open("calderon1.txt")
@@ -149,12 +139,7 @@ if __name__ == '__main__':
     fichero9 = open("2donq10.txt")
     procesado = open("process.txt","w")
     fichero10 = open("count.txt","w")
-    fichero11 = open("count2.txt","w")
-    char = {"a": "f", "b": "g", "c": "h", "d": "i", "e": "j", "f": "k", "g": "l",
-    "h":"m", "i":"n","j":"o","k": "p", "l": "q", "m": "r", "n": "s", "o": "t", "p": "u",
-    "q": "v", "r": "w", "s": "x", "t": "y", "u": "z", "v": "a", "w": "b", 
-    "x": "c", "y": "d", "z": "e"}
-    
+    fichero11 = open("count2.txt","w")    
     cad=""
 
     #Leemos del Fichero
@@ -173,11 +158,13 @@ if __name__ == '__main__':
     print(a)    
     print(indiceCoincidena(textStr, a))
     
-    cambiar()
+    cad = "ijsadfiouewqoriunvknldfj"
+    init(cad)
+    print ("texto original:",textStr)
+    textStr = codificar(textStr)
+    print("texto cifrado",textStr)
 
-    codificar(textStr)
 
-    descodificar(textStr)
     
     
     a = countLetterFrecuency(textStr, fichero11)
