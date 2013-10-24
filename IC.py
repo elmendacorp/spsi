@@ -92,15 +92,18 @@ def indiceCoincidena(text, dictFreq):
     return ic
 
 
-def permutacion(text):
-    # aplica la permutacion a un texto y crea uno nuevo
-    # la permutacion es una aleatoria entre los caracteres de ascii en
-    # minuscula
-    i = random.randint(0, 27)
-    for j in range(27):
-        text.replace(lista_letras[j], lista_letras[i])
-        i = i + 1
-        i = i % 27
+#simple script que cifra/descifra un texto con un cifrado vernam, con la aplicacion xor.
+#se le puede pasar la clave que se crea oportuna
+def crypt(text, key):
+    ''' cifra/descifra un texto utilizando operacion XOR'''
+    new_text = ""
+ 
+    for i, c in enumerate(text):
+        code = ord(c)
+        xor = code ^ ord(key[i])
+        new_text += chr(xor)
+ 
+    return new_text
 
 
 if __name__ == '__main__':
