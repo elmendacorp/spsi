@@ -12,7 +12,7 @@ import collections
 # Hay 27 caracteres en el alfabeto
 #ALPHABET_LOWERCASE = string.ascii_lowercase + "ñ"
 lista_letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-                "m", "ñ", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                "m", "n", "ñ" , "o", "p", "q", "r", "s", "t", "u", "v", "w",
                 "x", "y", "z"]
 
 
@@ -56,13 +56,13 @@ def eraseWhiteSpace(text):
     return text
 
 
-def countLetterFrecuency(text, textout):
+def countLetterFrecuency(text,textout):
     # Al final devuelve el diccionario de frecuencia ordenado
     freqDict = {
         "a": 0, "b": 0, "c": 0, "d": 0, "e": 0, "f": 0, "g": 0, "h": 0,
         "i": 0, "j": 0, "k": 0, "l": 0, "m": 0, "n": 0, "o": 0,
         "p": 0, "q": 0, "r": 0, "s": 0, "t": 0, "u": 0, "v": 0, "w": 0,
-        "x": 0, "y": 0, "z": 0, "ñ": 0}
+        "x": 0, "y": 0, "z": 0, "ñ":0}
     # Para contar la frecuencia de las letras usamos lo siguiente
     for i in lista_letras:
         a = i + ": " + str(text.count(i))
@@ -85,9 +85,8 @@ def indiceCoincidena(text, dictFreq):
     # Primero calculamos el numero de caracteres
     numTotalesChar = len(text)
     freqTot = 0
-    for i in lista_letras:
-        if i in dictFreq:
-            freqTot += dictFreq[i] * (dictFreq[i] - 1)
+    for i in dictFreq.keys():
+        freqTot += dictFreq[i] * (dictFreq[i] - 1)
     ic = freqTot / (numTotalesChar * (numTotalesChar - 1))
 
     return ic
@@ -105,13 +104,19 @@ def permutacion(text):
 
 
 if __name__ == '__main__':
-    fichero = open("test.txt")
-    fichero2 = open("process.txt", "w")
-    fichero3 = open("count.txt", "w")
-    fichero4 = open("permutacion.txt", "w")
+    fichero = open("calderon1.txt")
+    fichero2 = open("carrol1.txt")
+    fichero3 = open("cerv1.txt")
+    fichero4 = open("darwin1.txt")
+    fichero5 = open("galdos1.txt")
+    fichero6 = open("galdos2.txt")
+    fichero7 = open("kipling1.txt")
+    fichero8 = open("lazarillo.txt")
+    fichero9 = open("2donq10.txt")
+    fichero10 = open("count.txt","w")
 
     #Leemos del Fichero
-    textStr = fichero.read()
+    textStr = fichero.read() + fichero2.read() + fichero3.read() + fichero4.read() + fichero5.read() + fichero6.read() + fichero7.read() + fichero8.read() + fichero9.read() 
 
     # Primero limpiamos el texto de los caracteres peculiares
     textStr = eraseWhiteSpace(textStr)
@@ -119,9 +124,9 @@ if __name__ == '__main__':
     textStr = cleanText(textStr)
 
     #Tercera contamos la frecuencia de las letras y hacemos sort sobre ellas
-    a = countLetterFrecuency(textStr, fichero3)
-
+    a = countLetterFrecuency(textStr, fichero10)
     #Imprimimos el indice de coincidencia
+    print(a)    
     print(indiceCoincidena(textStr, a))
 
     #TODAVIA QUEDA DEFINIR LAS PERMUTACIONES Y CALCULAR EL IC DE ELLAS
