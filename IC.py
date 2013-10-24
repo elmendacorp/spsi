@@ -27,6 +27,7 @@ def cleanText(text):
     text = text.replace("ó", "o")
     text = text.replace("ú", "u")
     text = text.replace("ü", "u")
+    text = text.replace("ñ", "n")
     text = text.replace(",", "")
     text = text.replace(".", "")
     text = text.replace(";", "")
@@ -91,26 +92,50 @@ def indiceCoincidena(text, dictFreq):
 
     return ic
 
+def init(b):    
+    global cad
+    global dic
+    global dic2     
+    dic = {"a": b[0:3], "b": b[3:6], "c": b[6:9] , "d": b[9:12] , "e": b[12:15], 
+    "f": b[15:18], "g": b[18:21], "h": b[21:24], "i": b[24:27], "j": b[27:30],
+    "k": b[30:33], "l": b[33:36], "m": b[36:39], "n": b[39:42], "o": b[42:45],
+    "p": b[45:48], "q": b[48:51], "r": b[51:54], "s": b[54:57], "t": b[57:60],
+    "u": b[60:63], "v": b[63:66], "w": b[66:69], "x": b[69:72], "y": b[72:75],
+    "z": b[75:78], " ": b[78:81]}
 
-#simple script que cifra/descifra un texto con un cifrado vernam, con la aplicacion xor.
-#se le puede pasar la clave que se crea oportuna
-def crypt(text, key):
-    new_text = ""
-    for i, c in enumerate(text):
-        code = ord(c)
-        xor = code ^ ord(key[i])
-        new_text += chr(xor)
-    return new_text
+    dic2 = {b[0:3]: "a", b[3:6]: "b", b[6:9]: "c", b[9:12]: "d", b[12:15]: "e", 
+    b[15:18]: "f", b[18:21]: "g", b[21:24]: "h", b[24:27]: "i", b[27:30]: "j", 
+    b[30:33]: "k", b[33:36]: "l", b[36:39]: "m", b[39:42]: "n", b[42:45]: "o", 
+    b[45:48]: "p", b[48:51]: "q", b[51:54]: "r", b[54:57]: "s", b[57:60]: "t", 
+    b[60:63]: "u", b[63:66]: "v", b[66:69]: "w", b[69:72]: "x", b[72:75]: "y", 
+    b[75:78]: "z", b[78:81]: " "}
+    
+    cad=b
+    
+def codificar(cadena):
+    res=""
+    for x in cadena:
+        x = chr(x)
+        res+=dic[x]
+        res+=("*")
+    print "cadena de codificacion:", cad
+    return res
+    
+def descodificar(code):
+    res="" 
+    for x in code.split("*"):
+        if x!="":
+            x = chr(x)
+            res+=dic2[x]
+    print "cadena de codificacion:", cad
+    return res 
 
-#genera una clave aleatoria en base al tamaño del texto
-def get_randomkey(text):
-    start = '1'
-    end = '9'
-    for i in range(0, len(text) - 1):
-        start += '0'
-        end += '9'
-    key = random.randint(int(start), int(end))
-    return str(key)
+def cambiar():
+    res=""
+    for x in cad:
+        res+=char[x]
+    print "cadena de codificacion cambiada a:", res
+    init(res)
 
 if __name__ == '__main__':
     fichero = open("calderon1.txt")
@@ -122,16 +147,25 @@ if __name__ == '__main__':
     fichero7 = open("kipling1.txt")
     fichero8 = open("lazarillo.txt")
     fichero9 = open("2donq10.txt")
+    procesado = open("process.txt","w")
     fichero10 = open("count.txt","w")
     fichero11 = open("count2.txt","w")
+    char = {"a": "f", "b": "g", "c": "h", "d": "i", "e": "j", "f": "k", "g": "l",
+    "h":"m", "i":"n","j":"o","k": "p", "l": "q", "m": "r", "n": "s", "o": "t", "p": "u",
+    "q": "v", "r": "w", "s": "x", "t": "y", "u": "z", "v": "a", "w": "b", 
+    "x": "c", "y": "d", "z": "e"}
+    
+    cad=""
 
     #Leemos del Fichero
-    textStr = fichero.read() + fichero2.read() + fichero3.read() + fichero4.read() + fichero5.read() + fichero6.read() + fichero7.read() + fichero8.read() + fichero9.read() 
+    textStr = fichero.read()
 
     # Primero limpiamos el texto de los caracteres peculiares
     textStr = eraseWhiteSpace(textStr)
     # Segundo quitamos los espacios
     textStr = cleanText(textStr)
+    procesado.write(textStr)
+    procesado.close()
 
     #Tercera contamos la frecuencia de las letras y hacemos sort sobre ellas
     a = countLetterFrecuency(textStr, fichero10)
@@ -139,11 +173,12 @@ if __name__ == '__main__':
     print(a)    
     print(indiceCoincidena(textStr, a))
     
-    keygen = get_randomkey(textStr)
-    print("la clave es:",keygen)
+    cambiar()
+
+    codificar(textStr)
+
+    descodificar(textStr)
     
-    textStr = crypt(textStr, keygen)
-    print("Texto cifrado", textStr)
     
     a = countLetterFrecuency(textStr, fichero11)
     print(a)
