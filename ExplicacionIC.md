@@ -11,7 +11,7 @@ del calculo usando el lenguaje de programación Python.
 Las funciones principales que se han creado son:
 
 ```python
-def cleanText(text):
+def cleanText(2stext):
 def eraseWhiteSpace(text):
 def indiceCoincidena(text,dictFreq):
 ```
