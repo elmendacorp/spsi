@@ -21,17 +21,18 @@ def cleanText(text):
     Función creada para reemplazar los caracteres peculiares
     del lenguaje castellano
     """
-    text = text.replace("á", "a")
-    text = text.replace("é", "e")
-    text = text.replace("í", "i")
-    text = text.replace("ó", "o")
-    text = text.replace("ú", "u")
+    
+    text = text.replace("\xe1", "a")
+    text = text.replace("\xe9", "e")
+    text = text.replace("\xed", "i")
+    text = text.replace("\xf3", "o")
+    text = text.replace("\xf3", "u")
     text = text.replace("ü", "u")
-    text = text.replace("ñ", "n")
-    text = text.replace(",", "")
+    text = text.replace("\xf1", "n")
+    text = text.replace("\xfa", "")
+    text = text.replace("\xd1", "")
     text = text.replace(".", "")
-    text = text.replace(";", "")
-    text = text.replace(":", "")
+    text = text.replace(",", "")
     text = text.replace("!", "")
     text = text.replace("¡", "")
     text = text.replace("?", "")
@@ -42,10 +43,42 @@ def cleanText(text):
     text = text.replace("'", "")
     text = text.replace("-", "")
     text = text.replace("*", "")
-    text = text.replace("\n", "")
+    text = text.replace(":", "")
+    text = text.replace("\xda", "")
+    text = text.replace("[", "")
+    text = text.replace("]", "")
+    text = text.replace(";", "")
+    text = text.replace("\xa1", "")
+    text = text.replace("\xcd", "")
+    text = text.replace("\xef", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xbf", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xc9", "")
+    text = text.replace("&", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("1", "")
+    text = text.replace("2", "")
+    text = text.replace("3", "")
+    text = text.replace("4", "")
+    text = text.replace("5", "")
+    text = text.replace("6", "")
+    text = text.replace("7", "")
+    text = text.replace("8", "")
+    text = text.replace("9", "")
+    text = text.replace("0", "")
+    text = text.replace("\xba", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xfc", "")
+    text = text.replace("\xfc", "")
+
+
     # Todo el texto a minuscula
     text = text.lower()
     return text
+    
 
 
 def eraseWhiteSpace(text):
@@ -114,7 +147,7 @@ def init(b):
     
 def codificar(cadena):
     res=""
-    for x in range(0,len(cadena)):
+    for x in range(0,len(cadena)-1):
         res+=dic[cadena[x]]
     print "cadena de codificacion:", cad
     return res
@@ -129,14 +162,6 @@ def descodificar(code):
 
 if __name__ == '__main__':
     fichero = open("calderon1.txt")
-    fichero2 = open("carrol1.txt")
-    fichero3 = open("cerv1.txt")
-    fichero4 = open("darwin1.txt")
-    fichero5 = open("galdos1.txt")
-    fichero6 = open("galdos2.txt")
-    fichero7 = open("kipling1.txt")
-    fichero8 = open("lazarillo.txt")
-    fichero9 = open("2donq10.txt")
     procesado = open("process.txt","w")
     fichero10 = open("count.txt","w")
     fichero11 = open("count2.txt","w")    

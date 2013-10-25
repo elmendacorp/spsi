@@ -458,13 +458,13 @@ ROSAURA:                   Que calle
 CLOTALDO:                ¿De qué
            infieres agora, o sabes,
            que hay secreto en esta espada?
-ROSAURA:   Quien me la dio, dijo:  "Parte
+ROSAURA:   Quien me la dio, dijo:   Parte
            a Polonia, y solicita
            con ingenio, estudio o arte,
            que te vean esa espada
            los nobles y principales;
            que yo sé que alguno de ellos
-           te favorezca y ampare;"
+           te favorezca y ampare; 
            que, por si acaso era muerto,
            no quiso entonces nombrarle.
 
@@ -803,8 +803,8 @@ BASILIO:   Sobrinos, dadme los brazos,
            de su condición indicios,
            pues dio la muerte a su madre,
            con cuya fiereza dijo:
-           "Hombre soy, pues que ya empiezo
-           a pagar mal beneficios."
+            Hombre soy, pues que ya empiezo
+           a pagar mal beneficios. 
            Yo, acudiendo a mis estudios,
            en ellos y en todo miro
            que Segismundo sería
@@ -1189,9 +1189,9 @@ CLOTALDO:  Fue, señor, de esta manera:
            del fuego, rayo de pluma,
            o desasido cometa.
            Encarecí el vuelo altivo
-           diciendo:  "Al fin eres reina
+           diciendo:   Al fin eres reina
            de las aves, y así, a todas
-           es justo que te prefieras."
+           es justo que te prefieras. 
            Él no hubo menester más;
            que en tocando esta materia
            de la majestad, discurre
@@ -1199,7 +1199,7 @@ CLOTALDO:  Fue, señor, de esta manera:
            porque, en efecto, la sangre
            le incita, mueve y alienta
            a cosas grandes, y dijo:
-           "¡Que en la república inquieta
+            ¡Que en la república inquieta
            de las aves también haya
            quien les jure la obediencia!
            En llegado a este discurso,
@@ -1207,7 +1207,7 @@ CLOTALDO:  Fue, señor, de esta manera:
            pues, por lo menos, si estoy
            sujeto, lo estoy por fuerza;
            porque voluntariamente
-           a otro hombre no me rindiera."
+           a otro hombre no me rindiera. 
            Viéndole ya enfurecido
            con esto, que ha sido el tema
            de su dolor, le brindé
@@ -1370,8 +1370,8 @@ CLARÍN:    Hay, que ella está regalada,
            y podrá ser, si me deja
            el silencio de su mano,
            se cante por mí esta letra:
-              "Clarín que rompe el albor,
-           no suena mejor."
+               Clarín que rompe el albor,
+           no suena mejor. 
 CLOTALDO:  Tu queja está bien fundada;
            yo satisfaré tu queja,
            y en tanto, sírveme a mí.
@@ -2563,7 +2563,7 @@ CLARÍN:        En una encantada torre,
             ¡Que un hombre con tanta hambre
             viniese a morir viviendo!
             Lástima tengo de mí.
-            Todos dirán:  "bien lo creo;"
+            Todos dirán:   bien lo creo; 
             y bien se puede creer,
             pues para mí este silencio
             no conforma con el nombre
@@ -3327,13 +3327,13 @@ ROSAURA:       Generoso Segismundo,
             es tiempo que se desnude,
             como prometí, la hoja,
             pues confïada en sus señas,
-            me dijo, "Parte a Polonia,
+            me dijo,  Parte a Polonia,
             y procura que te vean
             ese acero que te adorna,
             los más nobles; que en alguno
             podrá ser que hallen piadosa
             acogida tus fortunas,
-            y consuelo tus congojas."
+            y consuelo tus congojas. 
             Llegué a Polonia, en efecto;
             pasemos, pues que no importa
             el decirlo, y ya se sabe,
@@ -3462,8 +3462,8 @@ SEGISMUNDO: (Cielos, si es verdad que sueño,  Aparte
             ¿Quién tuvo dichas heroicas
             que entre sí no diga, cuando
             las revuelve en su memoria:
-            "sin duda que fue soñado
-            cuanto vi?"  Pues si esto toca
+             sin duda que fue soñado
+            cuanto vi?   Pues si esto toca
             mi desengaño, si sé
             que es el gusto llama hermosa,
             que la convierte en cenizas
@@ -3621,8 +3621,8 @@ CLARÍN:     Soy un hombre desdichado,
                               Cae dentro
 
 
-BASILIO:    "¡Mirad que vais a morir
-            si está de Dios que muráis!"
+BASILIO:     ¡Mirad que vais a morir
+            si está de Dios que muráis! 
                Qué bien, ¡ay cielos!, persuade
             nuestro error, nuestra ignorancia
             a mayor conocimiento
@@ -3723,19 +3723,19 @@ SEGISMUNDO: Corte ilustre de Polonia,
             a hacer fieras mis costumbres;
             ¡qué buen modo de estorbarlas!
             Si a cualquier hombre dijesen
-            "Alguna fiera inhumana
-            te dará muerte," ¿escogiera
+             Alguna fiera inhumana
+            te dará muerte,  ¿escogiera
             buen remedio en despertallas
             cuando estuviesen durmiendo?
-            Si dijeras:  "Esta espada
+            Si dijeras:   Esta espada
             que traes ceñida, ha de ser
-            quien te dé la muerte," vana
+            quien te dé la muerte,  vana
             diligencia de evitarlo
             fuera entonces desnudarla,
             y ponérsela a los pechos.
-            Si dijesen:  "Golfos de agua
+            Si dijesen:   Golfos de agua
             han de ser tu sepultura
-            en monumentos de plata,"
+            en monumentos de plata, 
             mal hiciera en darse al mar,
             cuando, soberbio, levanta
             rizados montes de nieve,
