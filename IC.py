@@ -12,7 +12,7 @@ import collections
 # Hay 27 caracteres en el alfabeto
 #ALPHABET_LOWERCASE = string.ascii_lowercase + "ñ"
 lista_letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-                "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+                "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
                 "x", "y", "z"]
 
 
@@ -118,12 +118,12 @@ def indiceCoincidena(text, dictFreq):
     numTotalesChar = len(text)
     freqTot = 0
     for i in dictFreq.keys():
-        freqTot += dictFreq[i] * (dictFreq[i] - 1)
-    ic = freqTot / (numTotalesChar * (numTotalesChar - 1))
+        freqTot += float(dictFreq[i] * (dictFreq[i] - 1))
+    ic = float(freqTot / (numTotalesChar * (numTotalesChar - 1)))
 
     return ic
 
-
+"""
 def init(b):
     global cad
     global dic
@@ -161,10 +161,16 @@ def descodificar(code):
             res += dic2[x]
     print("cadena de codificacion:", cad)
     return res
+"""
+def codificar(text):
+    for x in lista_letras:
+        text = text.replace(x,lista_letras[random.randint(0,25)])
+    return text
 
 if __name__ == '__main__':
     fichero = open("calderon1.txt")
     procesado = open("process.txt", "w")
+    permutado = open("permutado.txt","w")
     fichero10 = open("count.txt", "w")
     fichero11 = open("count2.txt", "w")
     cad = ""
@@ -185,12 +191,8 @@ if __name__ == '__main__':
     print(a)
     print(indiceCoincidena(textStr, a))
 
-    cad = "ijsadfiouewqoriunvknldfj"
-    init(cad)
-    print("texto original:", textStr)
     textStr = codificar(textStr)
-    print("texto cifrado", textStr)
-
+    permutado.write(textStr)
     a = countLetterFrecuency(textStr, fichero11)
     print(a)
     print(indiceCoincidena(textStr, a))
