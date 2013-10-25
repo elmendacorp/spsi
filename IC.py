@@ -125,6 +125,9 @@ def indiceCoincidena(text, dictFreq):
 
 
 def codificar(text, numPermutaciones):
+    """
+    Se crea una lista de las permutaciones que queremos aplicarle al texto y se las aplicamos todas
+    """
     textOut = ""
     listOfCipherAl = []
     for i in range(numPermutaciones):
@@ -143,6 +146,7 @@ if __name__ == '__main__':
     fichero = open("calderon1.txt")
     procesado = open("process.txt", "w")
     permutado = open("permutado.txt", "w")
+    permutaciones = open("permutaciones.txt","w")
     fichero10 = open("count.txt", "w")
     fichero11 = open("count2.txt", "w")
     cad = ""
@@ -162,9 +166,12 @@ if __name__ == '__main__':
     # Imprimimos el indice de coincidencia
     # print(a)
     print(indiceCoincidena(textStr, a))
-
-    textStr = codificar(textStr, 20)
-    permutado.write(textStr)
-    a = countLetterFrecuency(textStr, fichero11)
-    # print(a)
-    print(indiceCoincidena(textStr, a))
+    #permutaciones aplicadas
+    for z in range(1,21):
+        textStr = codificar(textStr, z)
+        permutado.write(textStr)
+        a = countLetterFrecuency(textStr, fichero11)
+        # print(a)
+        print(indiceCoincidena(textStr, a))
+        permutaciones.write(str(indiceCoincidena(textStr, a)))
+        permutaciones.write("\n")
